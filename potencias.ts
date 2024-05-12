@@ -27,9 +27,32 @@ function calcularPotencia (base : number, exponente : number): number {
         potencia = base**exponente;
         console.log("La potencia de", base, "^", exponente ,"es: ", potencia);
 
-    } else if (exponente == 0) {
+    } else if (exponente === 0) {
             console.log ("La potencia del numero ingresado es 1");
         }
     return potencia;
 }
 
+/**function calcular(base:number, exponente: number) {
+ *   if (exponente >= 0){
+ *  
+ *      if (exponente === 0){
+ *          return 1;
+ *      } else {
+ *      return calcularPotencia(base, exponente);
+ *      }
+ *   }
+ * }
+ * 
+ * function calcularPotencia(base: number, exponente: number) {
+ *      let resultado: number = 1;
+ *      for (let i: number = 0; i < exponente; i++) {
+ *           resultado *= base;
+ *      }
+ *      return resultado;
+ * }
+ * 
+ * let potencia : any = calcular(base, exponente);\
+ * 
+ * console.log(base + " a la " + exponente + " potencia = " + potencia );
+ * */
