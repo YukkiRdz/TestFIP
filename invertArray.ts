@@ -13,10 +13,16 @@ for (index = 0; index < sizeArray; index++) {
     userArray[index] = rls.questionInt(`Ingrese el numero ${index}: `);
 }
 
-let invert : string = "";
-
-for (index = sizeArray - 1; index >= 0; index--) {
-invert = invert + userArray[index] + " ";
+function invertArray(userArray: number[], sizeArray: number) {
+   let invert : number[] = new Array (sizeArray);
+   for (index = sizeArray - 1; index >= 0; index--) {
+       invert[sizeArray - index - 1] = userArray[index];
+   } 
+   return invert;
 }
 
-console.log(invert);
+let arrayInvertida = invertArray(userArray, sizeArray)
+console.log(arrayInvertida);
+
+//let invert : string = "";
+ //invert = invert + userArray[index] + " ";
