@@ -7,7 +7,7 @@ import * as rls from "readline-sync";
 
 let sizeArray: number = rls.questionInt("Ingrese la longitud del arreglo que desee: ");
 let userArray: number[] = new Array(sizeArray);
-let index: number = 0
+let index: number = 0;
 
 for (index = 0; index < sizeArray; index++) {
     userArray[index] = rls.questionInt(`Ingrese el numero ${index}: `);
