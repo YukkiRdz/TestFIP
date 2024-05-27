@@ -2,18 +2,18 @@
 
     import * as rls from 'readline-sync';
 
-    // let sizeArrays: number = rls.questionInt('Ingrese la cantidad de numeros de la lista: ');
-    // let listaDeNumeros: number[] = new Array(sizeArrays)
+    let sizeArrays: number = rls.questionInt('Ingrese la cantidad de numeros de la lista: ');
+    let listaDeNumeros: number[] = new Array(sizeArrays)
 
-    // function armarLista(listaDeNumeros: number[]) {
-    //     for (let i = 0; i < sizeArrays; i++) {
-    //         listaDeNumeros[i] = rls.questionFloat(`Ingrese un numero en la posicion ${i}: `);
-    //     }
-    //     console.log('La lista es: ' + listaDeNumeros);
-    //     return listaDeNumeros;
-    // }
+    function armarLista(listaDeNumeros: number[]) {
+        for (let i = 0; i < sizeArrays; i++) {
+            listaDeNumeros[i] = rls.questionFloat(`Ingrese un numero en la posicion ${i}: `);
+        }
+        console.log('La lista es: ' + listaDeNumeros);
+        return listaDeNumeros;
+    }
 
-    // let lista: number[] = armarLista(listaDeNumeros);
+    let lista: number[] = armarLista(listaDeNumeros);
 
 //Encuentra el promedio de una lista de números.
 
@@ -102,21 +102,22 @@
     // console.log('La cantidad de numeros pares dentro de la lista es: ' + cantidadDeNumerosPar);
 
 //Encuentra el número de veces que aparece un elemento en una lista.
+/**(Escribe una función que reciba un array de números y un número como parámetros, y devuelva la cantidad de veces que el número aparece en el array. 
+La función debe recorrer el array usando un bucle for.)*/
     
-    // function encontrarCantidadDeRepeticion(array: number[]) {
-    //     let cantidadRepetidos: number = 0;
-    //     for (let i = 0; i < sizeArrays; i++) {
-    //         for(let j = 0; j < i; j++) {
-    //             if (array[i] === array [j]) {
-    //                 cantidadRepetidos++
-    //             }
-    //         }
-    //     }
-    //     return cantidadRepetidos;
-    // }
+    let numero: number = rls.questionInt('Ingrese el numero del que desea cuantas veces se repite: ');
+    function encontrarCantidadDeRepeticion(array: number[], numero: number) {
+        let cantidadRepetidos: number = 0;
+        for (let i = 0; i < sizeArrays; i++) {
+                if (array[i] === numero) {
+                    cantidadRepetidos++
+            }
+        }
+        return cantidadRepetidos;
+    }
     
-    // let vecesRepetidas: number = encontrarCantidadDeRepeticion(lista);
-    // console.log(`El elemento se repite: ${vecesRepetidas} veces`);
+    let vecesRepetidas: number = encontrarCantidadDeRepeticion(lista, numero);
+    console.log(`El elemento ${numero} se repite: ${vecesRepetidas} veces`);
 
 //Calcula el producto de todos los elementos en una lista.
 
