@@ -3,17 +3,18 @@
     import * as rls from 'readline-sync';
 
     let sizeArrays: number = rls.questionInt('Ingrese la cantidad de numeros de la lista: ');
-    let listaDeNumeros: number[] = new Array(sizeArrays)
+    let listaDeNumeros: number[] = new Array(sizeArrays);
 
-    function armarLista(listaDeNumeros: number[]) {
+    function armarLista(listaDeNumeros: number[]): number[] {
         for (let i = 0; i < sizeArrays; i++) {
             listaDeNumeros[i] = rls.questionFloat(`Ingrese un numero en la posicion ${i}: `);
         }
         console.log('La lista es: ' + listaDeNumeros);
         return listaDeNumeros;
     }
-
     let lista: number[] = armarLista(listaDeNumeros);
+    console.log(lista);
+    
 
 //Encuentra el promedio de una lista de números.
 
@@ -105,9 +106,10 @@
 /**(Escribe una función que reciba un array de números y un número como parámetros, y devuelva la cantidad de veces que el número aparece en el array. 
 La función debe recorrer el array usando un bucle for.)*/
     
-    let numero: number = rls.questionInt('Ingrese el numero del que desea cuantas veces se repite: ');
-    function encontrarCantidadDeRepeticion(array: number[], numero: number) {
-        let cantidadRepetidos: number = 0;
+    let numero: number = rls.questionInt('Ingrese el numero del que desea cuantas veces se repite: '); // variable global
+
+    function encontrarCantidadDeRepeticion(array: number[], numero: number): number {
+        let cantidadRepetidos: number = 0; //local
         for (let i = 0; i < sizeArrays; i++) {
                 if (array[i] === numero) {
                     cantidadRepetidos++

@@ -8,7 +8,7 @@
 // global y pasarlo a una función para determinar si el
 // número es par o impar
 
-let arrayNumbers: number[] = [12];
+let arrayNumbers: number[] = new Array (12);
 let indice: number = 0;
 arrayNumbers[0] = 4
 arrayNumbers[1] = 7

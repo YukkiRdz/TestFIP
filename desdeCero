@@ -130,7 +130,7 @@ let tercerPuesto: string = 'tercero';
 	//}
 
 //EJEMPLO
-
+let i: number;
     for(let i = 0; i < 10; i++) {
         if(i % 2 === 0) {  
             numeroPar++
@@ -143,3 +143,64 @@ let tercerPuesto: string = 'tercero';
 
 //INCREMENTO:
 //++ (suma de a 1) ++2 (suma de a 2) lo mismo con --(resta).
+
+//FUNCIONES
+
+    //todas las variables declaradas dentro de una funcion solo pertenecen a esa funcion (exceptuando arreglos y matrices) = LOCALES
+
+    //function nombreFuncion (parametro1: number, parametro2: tipo) tipo {
+        //instrucciones;
+        //return variableADevolver
+    //}
+
+    //los PARAMETROS son declaraciones fuera de la funcion (GLOBALES) que vamos a darle cuando llamamos a la funcion para que lo utilice dentro 
+
+// EJEMPLO
+    //Armar la lista de numeros.
+
+    import * as rls from 'readline-sync';
+
+    let sizeArrays: number = rls.questionInt('Ingrese la cantidad de numeros de la lista: '); //GLOBAL
+    let listaDeNumeros: number[] = new Array(sizeArrays); //GLOBAL
+
+    function armarLista(listaDeNumeros: number[]) {
+        let i: number;
+        for (i = 0; i < sizeArrays; i++) {
+            listaDeNumeros[i] = rls.questionFloat(`Ingrese un numero en la posicion ${i}: `); //LOCAL
+        }
+        console.log('La lista es: ' + listaDeNumeros);
+        return listaDeNumeros; // lo devolvemos con return para sacarlo de la funcion y utilizarlo en otra ocacion, si no hacemos esto no nos da nada para usar fuera de la funcion
+    }
+
+
+    let lista: number[] = armarLista(listaDeNumeros); //aca se declara una variable que contenga la funcion para luego devolverla mas facilmente
+    console.log(lista); //si no tendriamos la variable lista quedaria: console.log(armarLista(listaDeNumeros));
+
+//ACLARACION
+    //se puede llamar a una funcion dentro de otra funcion
+    //para llamarla simplemente escribimos nombreFuncion(parametros) y listo; si la funcion no tiene ningun parametro los parentesis quedan vacios ()
+
+//ARRAYS (ARREGLOS)
+
+//DECLARACION:
+    //let nombreArray: tipo[] = new Array(cantidadDeElementos); || let listaNombres: string[] = ['bruno','jere','thiago']; (ESTE SOLO CUANDO CONOCEMOS LOS VALORES DEL ARRAY)
+    
+    import * as rls from 'readline-sync';
+
+    //le pido al usuario que ingrese el numero del mes
+    let numeroMes: number = rls.questionInt("Ingrese el numero del mes: ");
+
+     //arrayMeses esta declarado de esta forma porque ya conozco los valores
+    let arrayMeses: string[] = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+    //declaro el indice como numeroMes (ingresado por el usuario) y le resto 1 porque el indice siempre comienza a contar desde el 0
+    let indice: number = numeroMes - 1;
+    
+    //si el usuario pone un numero mayor a 12 le pide ingresar un numero correcto
+    
+        if (indice < 12) {
+            console.log("El mes es", arrayMeses[indice]);
+        } else {
+            console.log ("Debe ingresar un mes valido");
+            numeroMes = rls.questionInt("Ingrese el numero del mes: ");
+        }
